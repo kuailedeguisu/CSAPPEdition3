@@ -1,0 +1,2 @@
+load executable file from disk to memory and jump to the entry point of the program:
+shell->execve->loader->program

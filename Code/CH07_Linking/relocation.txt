@@ -1,0 +1,91 @@
+09:42:53 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ objdump -d -x addmulvectest.o
+
+addmulvectest.o:     file format elf64-x86-64
+addmulvectest.o
+architecture: i386:x86-64, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x0000000000000000
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         00000077  0000000000000000  0000000000000000  00000040  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000010  0000000000000000  0000000000000000  000000b8  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  0000000000000000  0000000000000000  000000c8  2**0
+                  ALLOC
+  3 .rodata       00000016  0000000000000000  0000000000000000  000000c8  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .comment      00000012  0000000000000000  0000000000000000  000000de  2**0
+                  CONTENTS, READONLY
+  5 .note.GNU-stack 00000000  0000000000000000  0000000000000000  000000f0  2**0
+                  CONTENTS, READONLY
+  6 .eh_frame     00000038  0000000000000000  0000000000000000  000000f0  2**3
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+SYMBOL TABLE:
+0000000000000000 l    df *ABS*  0000000000000000 addmulvectest.c
+0000000000000000 l    d  .text  0000000000000000 .text
+0000000000000000 l    d  .data  0000000000000000 .data
+0000000000000000 l    d  .bss   0000000000000000 .bss
+0000000000000000 l    d  .rodata        0000000000000000 .rodata
+0000000000000000 l    d  .note.GNU-stack        0000000000000000 .note.GNU-stack
+0000000000000000 l    d  .eh_frame      0000000000000000 .eh_frame
+0000000000000000 l    d  .comment       0000000000000000 .comment
+0000000000000000 g     O .data  0000000000000008 x
+0000000000000008 g     O .data  0000000000000008 y
+0000000000000008       O *COM*  0000000000000008 z
+0000000000000008       O *COM*  0000000000000008 m
+0000000000000000 g     F .text  0000000000000077 main
+0000000000000000         *UND*  0000000000000000 addvec
+0000000000000000         *UND*  0000000000000000 printf
+0000000000000000         *UND*  0000000000000000 mulvec
+
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+   0:   55                      push   %rbp
+   1:   48 89 e5                mov    %rsp,%rbp
+   4:   b9 02 00 00 00          mov    $0x2,%ecx
+   9:   ba 00 00 00 00          mov    $0x0,%edx
+                        a: R_X86_64_32  z
+   e:   be 00 00 00 00          mov    $0x0,%esi
+                        f: R_X86_64_32  y
+  13:   bf 00 00 00 00          mov    $0x0,%edi
+                        14: R_X86_64_32 x
+  18:   e8 00 00 00 00          callq  1d <main+0x1d>
+                        19: R_X86_64_PC32       addvec-0x4
+  1d:   8b 15 00 00 00 00       mov    0x0(%rip),%edx        # 23 <main+0x23>
+                        1f: R_X86_64_PC32       z
+  23:   8b 05 00 00 00 00       mov    0x0(%rip),%eax        # 29 <main+0x29>
+                        25: R_X86_64_PC32       z-0x4
+  29:   89 c6                   mov    %eax,%esi
+  2b:   bf 00 00 00 00          mov    $0x0,%edi
+                        2c: R_X86_64_32 .rodata
+  30:   b8 00 00 00 00          mov    $0x0,%eax
+  35:   e8 00 00 00 00          callq  3a <main+0x3a>
+                        36: R_X86_64_PC32       printf-0x4
+  3a:   b9 02 00 00 00          mov    $0x2,%ecx
+  3f:   ba 00 00 00 00          mov    $0x0,%edx
+                        40: R_X86_64_32 m
+  44:   be 00 00 00 00          mov    $0x0,%esi
+                        45: R_X86_64_32 y
+  49:   bf 00 00 00 00          mov    $0x0,%edi
+                        4a: R_X86_64_32 x
+  4e:   e8 00 00 00 00          callq  53 <main+0x53>
+                        4f: R_X86_64_PC32       mulvec-0x4
+  53:   8b 15 00 00 00 00       mov    0x0(%rip),%edx        # 59 <main+0x59>
+                        55: R_X86_64_PC32       m
+  59:   8b 05 00 00 00 00       mov    0x0(%rip),%eax        # 5f <main+0x5f>
+                        5b: R_X86_64_PC32       m-0x4
+  5f:   89 c6                   mov    %eax,%esi
+  61:   bf 00 00 00 00          mov    $0x0,%edi
+                        62: R_X86_64_32 .rodata+0xb
+  66:   b8 00 00 00 00          mov    $0x0,%eax
+  6b:   e8 00 00 00 00          callq  70 <main+0x70>
+                        6c: R_X86_64_PC32       printf-0x4
+  70:   b8 00 00 00 00          mov    $0x0,%eax
+  75:   5d                      pop    %rbp
+  76:   c3                      retq
+09:43:07 seroiuvd07659: ~/Study/CSAPP/CH07_Linking

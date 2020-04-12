@@ -1,0 +1,106 @@
+07:59:54 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -o foobar1 foo1.c bar1.c
+/tmp/cc0rzY7S.o: In function `main':
+bar1.c:(.text+0x0): multiple definition of `main'
+/tmp/ccJUYWKF.o:foo1.c:(.text+0x0): first defined here
+collect2: error: ld returned 1 exit status
+
+
+08:15:50 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -o foobar2 foo2.c bar2.c
+/tmp/ccRYyNEn.o:(.data+0x0): multiple definition of `x'
+/tmp/ccazflvV.o:(.data+0x0): first defined here
+/tmp/ccRYyNEn.o: In function `main':
+bar2.c:(.text+0x0): multiple definition of `main'
+/tmp/ccazflvV.o:foo2.c:(.text+0x0): first defined here
+collect2: error: ld returned 1 exit status
+
+
+08:21:46 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -o foobar3 foo3.c bar3.c
+08:21:49 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ./foobar3
+x=15212
+08:22:01 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$
+
+
+08:22:01 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -o foobar4 foo4.c bar4.c
+08:24:37 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ./foobar4
+x=15212
+08:24:42 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$
+
+08:33:12 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -o foobar5 foo5.c bar5.c
+/app/vbuild/RHEL7-x86_64/binutils/2.30/bin/ld: Warning: alignment 4 of symbol `x' in /tmp/cc69ekmE.o is smaller than 8 in /tmp/cciNrxMJ.o
+08:33:40 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ./foobar5
+x=0x0 y=0x3b6c
+08:33:46 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$
+
+08:33:46 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -o -Werror foobar5 foo5.c bar5.c
+foobar5: In function `_fini':
+(.fini+0x0): multiple definition of `_fini'
+/lib/../lib64/crti.o:(.fini+0x0): first defined here
+foobar5: In function `data_start':
+(.data+0x0): multiple definition of `__data_start'
+/lib/../lib64/crt1.o:(.data+0x0): first defined here
+foobar5: In function `data_start':
+(.data+0x8): multiple definition of `__dso_handle'
+/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/crtbegin.o:(.data+0x0): first defined here
+foobar5:(.rodata+0x0): multiple definition of `_IO_stdin_used'
+/lib/../lib64/crt1.o:(.rodata.cst4+0x0): first defined here
+foobar5: In function `_start':
+(.text+0x0): multiple definition of `_start'
+/lib/../lib64/crt1.o:(.text+0x0): first defined here
+foobar5: In function `_init':
+(.init+0x0): multiple definition of `_init'
+/lib/../lib64/crti.o:(.init+0x0): first defined here
+/tmp/ccVDdZ1b.o:(.data+0x0): multiple definition of `y'
+foobar5:(.data+0x10): first defined here
+/tmp/ccVDdZ1b.o:(.data+0x4): multiple definition of `x'
+foobar5:(.data+0x14): first defined here
+/tmp/ccVDdZ1b.o: In function `main':
+foo5.c:(.text+0x0): multiple definition of `main'
+foobar5:(.text+0xd2): first defined here
+/app/vbuild/RHEL7-x86_64/binutils/2.30/bin/ld: Warning: alignment 4 of symbol `x' in foobar5 is smaller than 8 in /tmp/ccsVkJyz.o
+/tmp/ccsVkJyz.o: In function `f':
+bar5.c:(.text+0x0): multiple definition of `f'
+foobar5:(.text+0xff): first defined here
+/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/crtend.o:(.tm_clone_table+0x0): multiple definition of `__TMC_END__'
+foobar5:(.data+0x18): first defined here
+/app/vbuild/RHEL7-x86_64/binutils/2.30/bin/ld: error in foobar5(.eh_frame); no .eh_frame_hdr table will be created.
+collect2: error: ld returned 1 exit status
+
+
+
+08:53:04 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -c addvec.c mulvec.c
+08:53:39 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ls
+addvec.c  bar4.c                    foo3.c   foobar5      sum.c    sumtest.c
+addvec.o  bar5.c                    foo4.c   mulvec.c     sum.h    sumtest.o
+bar1.c    detailcompilerdriver.txt  foo5.c   mulvec.o     sum.o    sumtest.s
+bar2.c    foo1.c                    foobar3  note.txt     sum.s    symbolresolution.txt
+bar3.c    foo2.c                    foobar4  readelf.txt  sumtest
+08:53:40 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ar rcs libvector.a addvec.o mulvec.o
+08:54:04 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ls
+addvec.c  bar4.c                    foo3.c   foobar5      readelf.txt  sumtest
+addvec.o  bar5.c                    foo4.c   libvector.a  sum.c        sumtest.c
+bar1.c    detailcompilerdriver.txt  foo5.c   mulvec.c     sum.h        sumtest.o
+bar2.c    foo1.c                    foobar3  mulvec.o     sum.o        sumtest.s
+bar3.c    foo2.c                    foobar4  note.txt     sum.s        symbolresolution.txt
+08:54:21 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$
+
+09:00:48 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -c addmulvectest.c
+09:00:53 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ls
+addmulvectest.c  bar3.c                    foo3.c   libvector.a  sum.h      sumtest.s
+addmulvectest.o  bar4.c                    foo4.c   mulvec.c     sum.o      symbolresolution.txt
+addvec.c         bar5.c                    foo5.c   mulvec.o     sum.s      vector.h
+addvec.o         detailcompilerdriver.txt  foobar3  note.txt     sumtest
+bar1.c           foo1.c                    foobar4  readelf.txt  sumtest.c
+bar2.c           foo2.c                    foobar5  sum.c        sumtest.o
+09:00:55 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -static -o addmulvectest addmulvectest.o ./libvector.a
+09:01:26 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ./addmulvectest
+z=[4 6]
+m=[3 8]
+09:01:31 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$
+
+09:01:31 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -static -o addmulvectest addmulvectest.o -L. -lvector
+09:03:55 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ ./addmulvectest
+z=[4 6]
+m=[3 8]
+09:03:58 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$
+
+

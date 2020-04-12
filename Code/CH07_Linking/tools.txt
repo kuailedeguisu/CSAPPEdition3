@@ -1,0 +1,29 @@
+*-MacBook-Air:CH07_Linking *$ strings malloctest
+malloc(%d)=%p
+free=%p
+*-MacBook-Air:CH07_Linking *$ nm malloctest
+0000000100000000 T __mh_execute_header
+0000000100000eb0 T _main
+0000000100000f40 T _myfree
+0000000100000ef0 T _mymalloc
+                 U _printf
+                 U dyld_stub_binder
+*-MacBook-Air:CH07_Linking *$ size malloctest
+__TEXT	__DATA	__OBJC	others	dec	hex
+4096	4096	0	4294971392	4294979584	100003000
+
+*-MacBook-Air:CH07_Linking *$ objdump -d -x malloctest
+
+...
+
+*-MacBook-Air:CH07_Linking *$ otool -L malloctest
+malloctest:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.250.1)
+*-MacBook-Air:CH07_Linking *$
+
+ar rcs libvector.a addvec.o mulvec.o // generate libvector.a
+
+readelf and objdump not supported for mac ??? objdump supported for mac
+brew update && brew install binutils // failed(fatal: unable to access 'https://github.com/Homebrew/homebrew-core/': LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54)
+greadelf
+gobjdump

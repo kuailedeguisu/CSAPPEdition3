@@ -1,0 +1,2 @@
+gcc -Og -o sumtest sumtest.c sum.c
+-v: 从源文件翻译成可执行目标文件sumtest的详细步骤

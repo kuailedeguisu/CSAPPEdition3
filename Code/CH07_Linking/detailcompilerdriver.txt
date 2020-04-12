@@ -1,0 +1,61 @@
+07:06:11 seroiuvd07659: ~/Study/CSAPP/CH07_Linking$ gcc -Og -o sumtest sumtest.c sum.c -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /local/scratch/xhpmim/working/gcc-8.2.0/configure --prefix=/app/vbuild/RHEL7-x86_64/gcc/8.2.0 --enable-languages=c,c++,fortran --enable-libmpx --with-as=/app/vbuild/RHEL7-x86_64/binutils/2.30/bin/as --with-ld=/app/vbuild/RHEL7-x86_64/binutils/2.30/bin/ld --with-gnu-as --with-gnu-ld
+Thread model: posix
+gcc version 8.2.0 (GCC)
+COLLECT_GCC_OPTIONS='-Og' '-o' 'sumtest' '-v' '-mtune=generic' '-march=x86-64'
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/cc1 -quiet -v -iprefix /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/ sumtest.c -quiet -dumpbase sumtest.c -mtune=generic -march=x86-64 -auxbase sumtest -Og -version -o /tmp/ccRarCVU.s
+GNU C17 (GCC) version 8.2.0 (x86_64-pc-linux-gnu)
+        compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include"
+ignoring duplicate directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include-fixed"
+ignoring nonexistent directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include-fixed
+ /usr/local/include
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../include
+ /usr/include
+End of search list.
+GNU C17 (GCC) version 8.2.0 (x86_64-pc-linux-gnu)
+        compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: da09db31f11d0d65140474748216a7bb
+COLLECT_GCC_OPTIONS='-Og' '-o' 'sumtest' '-v' '-mtune=generic' '-march=x86-64'
+ /app/vbuild/RHEL7-x86_64/binutils/2.30/bin/as -v --64 -o /tmp/ccplxsij.o /tmp/ccRarCVU.s
+GNU assembler version 2.30 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.30
+COLLECT_GCC_OPTIONS='-Og' '-o' 'sumtest' '-v' '-mtune=generic' '-march=x86-64'
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/cc1 -quiet -v -iprefix /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/ sum.c -quiet -dumpbase sum.c -mtune=generic -march=x86-64 -auxbase sum -Og -version -o /tmp/ccRarCVU.s
+GNU C17 (GCC) version 8.2.0 (x86_64-pc-linux-gnu)
+        compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring duplicate directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include"
+ignoring duplicate directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include-fixed"
+ignoring nonexistent directory "/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/include-fixed
+ /usr/local/include
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/../../include
+ /usr/include
+End of search list.
+GNU C17 (GCC) version 8.2.0 (x86_64-pc-linux-gnu)
+        compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: da09db31f11d0d65140474748216a7bb
+COLLECT_GCC_OPTIONS='-Og' '-o' 'sumtest' '-v' '-mtune=generic' '-march=x86-64'
+ /app/vbuild/RHEL7-x86_64/binutils/2.30/bin/as -v --64 -o /tmp/cc7qOrKH.o /tmp/ccRarCVU.s
+GNU assembler version 2.30 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.30
+COMPILER_PATH=/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/:/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/
+LIBRARY_PATH=/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/:/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/:/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-Og' '-o' 'sumtest' '-v' '-mtune=generic' '-march=x86-64'
+ /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/collect2 -plugin /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/liblto_plugin.so -plugin-opt=/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../libexec/gcc/x86_64-pc-linux-gnu/8.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrjOid6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o sumtest /lib/../lib64/crt1.o /lib/../lib64/crti.o /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/crtbegin.o -L/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0 -L/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc -L/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/../../.. /tmp/ccplxsij.o /tmp/cc7qOrKH.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /afs/sero.gic.ericsson.se/app/vbuild/RHEL7-x86_64/gcc/8.2.0/bin/../lib/gcc/x86_64-pc-linux-gnu/8.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-Og' '-o' 'sumtest' '-v' '-mtune=generic' '-march=x86-64'
