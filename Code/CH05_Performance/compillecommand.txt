@@ -1,0 +1,4 @@
+gcc -o * *.c
+./*
+gcc -O1 -S *.c
+cat *.s

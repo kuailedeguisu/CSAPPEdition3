@@ -1,0 +1,26 @@
+Efficient program needs:
+1) proper data structure and algorithms;
+2) compiler can optimize it into efficient executable code automatically
+
+C语言的指针运算和强制类型转换，编译器很难优化
+消除不必要的函数调用，条件测试，内存引用
+
+循环中的关键路径
+不断修改代码来检查汇编代码来分析性能
+
+
+
+
+优化编译器的能力和局限性
+GCC自带一些优化代码的能力
+-Og：基本的优化
+-O1，-O2， -O3：更大量的优化
+限制编译器只进行安全的优化
+内存别名引用：两个指针指向同一个位置
+函数调用的副作用：修改了全局程序状态的一部分
+
+
+
+
+
+
